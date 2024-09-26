@@ -93,7 +93,10 @@ INSERT INTO `bettors` (`BettorsID`, `Username`, `Password`, `Balance`, `Email`, 
 (7, 'checkeredflag', 'hashed_password7', 800, 'checkeredflag@example.com', '2024-04-01', 1),
 (8, 'podiumfinisher', 'hashed_password8', 700, 'podiumfinisher@example.com', '2024-01-25', 1),
 (9, 'racinghero', 'hashed_password9', 900, 'racinghero@example.com', '2024-02-20', 1),
-(10, 'trackwizard', 'hashed_password10', 100, 'trackwizard@example.com', '2024-03-15', 1);
+(10, 'trackwizard', 'hashed_password10', 100, 'trackwizard@example.com', '2024-03-15', 1)
+(11, 'user', 'user', 1200, 'user@default.com', '2024-09-26', 1),
+(12, 'admin', 'admin', 1200, 'admin@default.com', '2024-09-26', 1),
+(13, 'organizer', 'org', 1200, 'organizer@default.com', '2024-09-26', 1);
 
 -- --------------------------------------------------------
 
