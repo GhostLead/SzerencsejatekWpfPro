@@ -11,10 +11,10 @@
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Username" Foreground="Black" Margin="0,0,0,-5"/>
-            <TextBox Width="200" Height="25" Margin="0,0,0,0"/>
+            <TextBox Width="200" x:Name="txtUsername" Height="25" Margin="0,0,0,0"/>
             <Label Content="Password" Foreground="Black" Margin="0,0,0,-5"/>
-            <PasswordBox Width="200" Height="25"/>
-            <Button Width="110" Height="30" Margin="0,20,0,0" Content="Bejelentkezés"/>
+            <PasswordBox Width="200" x:Name="passPassword" Height="25"/>
+            <Button Width="110" x:Name="btnBejelentkezes" Height="30" Margin="0,20,0,0" Content="Bejelentkezés" Click="btnBejelentkezes_Click"/>
         </StackPanel>
         
     </Grid>

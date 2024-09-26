@@ -21,6 +21,7 @@ namespace SzerencsejatekWpfPro
         List<Bettors> fogadok = new();
         public string connectionString = "datasource = 127.0.0.1;port=3306;username=root;password=;database=fogadasok";
         private MySqlConnection connection;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -68,7 +69,7 @@ namespace SzerencsejatekWpfPro
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Are you sure you want to exit the application?","Exit tha application",MessageBoxButton.YesNo,MessageBoxImage.Question);
+            MessageBox.Show("Are you sure you want to exit the application?","Exit the application",MessageBoxButton.YesNo,MessageBoxImage.Question);
             
         }
     }
