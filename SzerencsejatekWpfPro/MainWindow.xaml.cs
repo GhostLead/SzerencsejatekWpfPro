@@ -24,6 +24,7 @@ namespace SzerencsejatekWpfPro
         public MainWindow()
         {
             InitializeComponent();
+            Container.Content = new LogIn();
             loadUsers();
             
         }
@@ -56,20 +57,9 @@ namespace SzerencsejatekWpfPro
             }
         }
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void Registration_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new Home();
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            Container.Content = new LogIn();
-        }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Are you sure you want to exit the application?","Exit tha application",MessageBoxButton.YesNo,MessageBoxImage.Question);
-            
+            Container.Content = new Registration();
         }
     }
 }

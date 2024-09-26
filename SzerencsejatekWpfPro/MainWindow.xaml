@@ -5,44 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SzerencsejatekWpfPro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True">
+        Title="MainWindow" Height="620" Width="450" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <ContentControl Content="{Binding CurrentView}"/>
-        <Border BorderThickness="2" BorderBrush="Black" Background="#FF1C375B" Height="450" Width="800" CornerRadius="20">
-            <Grid Margin="15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="122"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="55"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Border Background="#FF4C565F" Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="3,3,1.5,0" CornerRadius="5,0,0,0">
-                    <Button x:Name="btnLogin" Width="100" Height="25" Content="LogIn" Margin="0,0,0,0" Click="btnLogin_Click"/>
-                </Border>
-                <Border Background="#FF4C565F" Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="3,0,1.5,3" CornerRadius="0,0,0,5">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Button x:Name="btnHome" Width="100" Height="25" Content="Home" Margin="0,0,0,20" Click="btnHome_Click"/>
-                        <Button x:Name="btnBet" Width="100" Height="25" Content="Bet" Margin="0,0,0,20"/>
-                        <Button x:Name="btnAccount" Width="100" Height="25" Content="Account"/>
-                        <Button x:Name="ExitButton" Width="100" Height="25" Content="Exit" Margin="0,80,0,0" Click="ExitButton_Click"/>
-                    </StackPanel>
-                </Border>
-                <Border Background="#FF4C565F" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1.5,3,3,1.5" CornerRadius="0,5,0,0">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
-                        <Label Content="Username" Foreground="White" FontSize="22" Margin="0,0,460,0"/>
-                        <Label Content="500$" Foreground="White" FontSize="17" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                    </StackPanel>
-                </Border>
-                <Border Background="#FFB5D48B" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1.5,1.5,3,3" CornerRadius="0,0,5,0">
-                    <Frame Margin="5" x:Name="Container" NavigationUIVisibility="Hidden"/>
-                </Border>
-
-            </Grid>
+        <Border Background="White" Margin="50" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5"
+                  Opacity=".5"
+                  ShadowDepth="5" />
+            </Border.Effect>
+            <StackPanel Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Rectangle Width="160" Height="140">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="/best-beer-logo-icon-design-vector-22545217.jpg"  />
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Frame x:Name="Container" NavigationUIVisibility="Hidden"/>
+                <Button x:Name="regbtn" Style="{DynamicResource RegistrationButton}" Width="100" Height="20" Content="Regisztráció" Margin="0,100" Cursor="Hand" Click="Registration_Click"/>
+            </StackPanel>
         </Border>
-        
+
     </Grid>
 </Window>
