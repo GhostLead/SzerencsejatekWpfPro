@@ -60,6 +60,19 @@ namespace SzerencsejatekWpfPro
         private void Registration_Click(object sender, RoutedEventArgs e)
         {
             Container.Content = new Registration();
+            regbtn.Visibility = Visibility.Hidden;
+            regbtn.IsEnabled = false;
+            
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -7,21 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="620" Width="450" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <Border Background="White" Margin="50" CornerRadius="20">
+        <Border Background="White" Margin="65" CornerRadius="20" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="5"
                   Opacity=".5"
                   ShadowDepth="5" />
             </Border.Effect>
-            <StackPanel Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Rectangle Width="160" Height="140">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="/best-beer-logo-icon-design-vector-22545217.jpg"  />
-                    </Rectangle.Fill>
-                </Rectangle>
-                <Frame x:Name="Container" NavigationUIVisibility="Hidden"/>
-                <Button x:Name="regbtn" Style="{DynamicResource RegistrationButton}" Width="100" Height="20" Content="Regisztráció" Margin="0,100" Cursor="Hand" Click="Registration_Click"/>
+            <StackPanel Orientation="Vertical">
+                <Button Width="30" Height="30" Margin="0,10,20,0" HorizontalAlignment="Right" Style="{DynamicResource LoginButton}" Content="X" Background="Red" Foreground="White" Click="Button_Click"/>
+                <StackPanel Margin="20,-15,20,20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Rectangle Width="160" Height="140">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="/best-beer-logo-icon-design-vector-white.jpg"  />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Frame x:Name="Container" NavigationUIVisibility="Hidden"/>
+                    <Button x:Name="regbtn" Style="{DynamicResource RegistrationButton}" Width="100" Height="20" Content="Regisztráció" Margin="0,60,0,0" Cursor="Hand" Click="Registration_Click"/>
+                </StackPanel>
             </StackPanel>
+            
         </Border>
 
     </Grid>

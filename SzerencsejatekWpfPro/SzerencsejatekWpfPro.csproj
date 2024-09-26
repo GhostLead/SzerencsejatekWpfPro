@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="best-beer-logo-icon-design-vector-22545217.jpg" />
+    <None Remove="best-beer-logo-icon-design-vector-colored.jpg" />
+    <None Remove="best-beer-logo-icon-design-vector-white.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +20,8 @@
 
   <ItemGroup>
     <Resource Include="best-beer-logo-icon-design-vector-22545217.jpg" />
+    <Resource Include="best-beer-logo-icon-design-vector-colored.jpg" />
+    <Resource Include="best-beer-logo-icon-design-vector-white.jpg" />
   </ItemGroup>
 
 </Project>

@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SzerencsejatekWpfPro"
         mc:Ignorable="d"
-        Title="ApplicationWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="ApplicationWindow" Width="900" Height="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Border CornerRadius="20" BorderThickness="2" BorderBrush="Black" MouseLeftButtonDown="Border_MouseLeftButtonDown" Height="450" Width="800" Background="#FF1D1F2B">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="5" Opacity=".5" ShadowDepth="5" />
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="122"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.RowSpan="2" >
+                <Image Grid.Row="0" Grid.Column="0" Width="100" Height="100" Source="/best-beer-logo-icon-design-vector-white.jpg" Margin="0,0,0,33"/>
+                <Button Height="50" Style="{DynamicResource NavButtonStyle}" Cursor="Hand" x:Name="btnFiok" Content="Fiók" Margin="5,33,5,5" Click="btnFiok_Click"/>
+                <Button Height="50" Style="{DynamicResource NavButtonStyle}" Cursor="Hand" x:Name="btnFogadas" Content="Fogadás" Margin="5,0,5,5" Click="btnFogadas_Click"/>
+                <Button Height="50" Style="{DynamicResource NavButtonStyle}" Cursor="Hand" x:Name="btnPenzFeltoltes" Content="Pénz feltöltés" Margin="5,0,5,5" Click="btnPenzFeltoltes_Click"/>
+                <Label Content="Kijelentkezés" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,85,0,0" Foreground="Red">
+                    <Label.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="1" Direction="-45" Opacity="1"/>
+                    </Label.Effect>
+                </Label>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Border  Width="550" Height="45" CornerRadius="10" Background="Transparent" Padding="5" Margin="22,0,25,0">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="3" Direction="315" Opacity="1"/>
+                    </Border.Effect>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label Content="Username" HorizontalAlignment="Left" Width="200" FontSize="16" VerticalAlignment="Center" Foreground="White" FontWeight="DemiBold" FontFamily="times new roman" Margin="0,0,100,0"/>
+                        <Label Content="500 $" Width="200" VerticalAlignment="Center" HorizontalAlignment="right" HorizontalContentAlignment="Right" FontSize="20" FontStyle="Italic" Foreground="White" FontWeight="Bold">
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="1" ShadowDepth="0" Color="#FF37FF00" BlurRadius="3" RenderingBias="Quality"/>
+                            </Label.Effect>
+                        </Label>
+                    </StackPanel>
+                </Border>
+                <Button Width="30" Height="30" HorizontalAlignment="Right" Style="{DynamicResource LoginButton}" x:Name="exitButton" Content="X" Background="Red" Cursor="Hand" Foreground="White" Margin="0,0,-8,0" Click="exitButton_Click"/>
+            </StackPanel>
+            
+            
+
+            
+
+            <Border Grid.Row="1" Grid.Column="1" BorderThickness="2,2,0,0" BorderBrush="Black" CornerRadius="20,0,20,0">
+                <Frame x:Name="Container" NavigationUIVisibility="Hidden" Margin="5" Width="655" Height="365"/>
+            </Border>
+            
+            
+
+
+
+        </Grid>
+    </Border>
 </Window>

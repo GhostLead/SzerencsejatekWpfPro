@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SzerencsejatekWpfPro
 {
     /// <summary>
-    /// Interaction logic for Account.xaml
+    /// Interaction logic for AccountPage.xaml
     /// </summary>
-    public partial class Account : Page
+    public partial class AccountPage : Page
     {
-        public Account()
+        public AccountPage()
         {
             InitializeComponent();
         }

@@ -24,5 +24,13 @@ namespace SzerencsejatekWpfPro
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationWindow win = new ApplicationWindow();
+            MainWindow mainwin = new MainWindow();
+            win.Show();
+            Application.Current.MainWindow.Close();
+        }
     }
 }

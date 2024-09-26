@@ -1,0 +1,25 @@
+﻿<Page x:Class="SzerencsejatekWpfPro.BetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SzerencsejatekWpfPro"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="655"  Width="655" Height="365"
+      Title="BetPage" Background="Transparent">
+
+    <Grid HorizontalAlignment="Center" Width="640" Height="345">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Események" FontSize="20" HorizontalAlignment="Center" FontWeight="UltraBold" FontFamily="Arial" Grid.Row="0" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect Color="Red" Opacity="1" BlurRadius="5" ShadowDepth="0" Direction="0"/>
+            </Label.Effect>
+        </Label>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <StackPanel x:Name="content" Orientation="Vertical" Margin="5"></StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

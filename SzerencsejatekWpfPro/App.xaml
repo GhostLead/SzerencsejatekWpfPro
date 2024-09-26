@@ -16,13 +16,13 @@
             </Setter>
         </Style>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
-        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
-        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF565ED8"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF565ED8"/>
         
         
         <SolidColorBrush x:Key="TextBox.Static.Border1" Color="#FFABAdB3"/>
-        <SolidColorBrush x:Key="TextBox.MouseOver.Border1" Color="#FF7EB4EA"/>
-        <SolidColorBrush x:Key="TextBox.Focus.Border1" Color="#FF569DE5"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border1" Color="#FF565ED8"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border1" Color="#FF565ED8"/>
         <Style x:Key="FocusVisual1">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -173,12 +173,33 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="lightblue"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF565ED8"/> 
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF383838"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF8085D6"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="NavButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#FF1D1F2B"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="SzerencsejatekWpfPro.AccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SzerencsejatekWpfPro"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="630"
+      Title="AccountPage" Background="Transparent">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="340"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+            <Label Content="Felhasználónév" FontSize="14" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Username" Margin="10,-5,0,0" FontSize="12" FontWeight="DemiBold" Foreground="White"/>
+
+            <Label Content="Jelszó" FontSize="14" FontWeight="Bold" Foreground="White"/>
+            <Label Content="Password" Margin="10,-5,0,0" FontSize="12" FontWeight="DemiBold" Foreground="White"/>
+
+            <Label Content="Email cím" FontSize="14" FontWeight="Bold" Foreground="White"/>
+            <Label Content="emailcim@email.com" Margin="10,-5,0,0" FontSize="12" FontWeight="DemiBold" Foreground="White"/>
+        </StackPanel>
+
+        <Image Grid.Row="0" Grid.Column="1" Width="340" Height="340" Grid.RowSpan="2" Source="/best-beer-logo-icon-design-vector-white.jpg" Margin="20,0,0,65" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Height="160">
+            <Label Content="Üzenj nekünk!" FontSize="14" FontWeight="Bold" Foreground="White"/>
+            <TextBox Width="250" Height="100" TextWrapping="Wrap" FontWeight="DemiBold" FontSize="13" BorderBrush="black" BorderThickness="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+            <Button Width="100" Height="25" Margin="5" Content="Küldés" Style="{DynamicResource LoginButton}" Cursor="Hand"/>
+        </StackPanel>
+        
+
+    </Grid>
+</Page>
