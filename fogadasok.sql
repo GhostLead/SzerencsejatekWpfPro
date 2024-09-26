@@ -75,7 +75,7 @@ CREATE TABLE `bettors` (
   `Password` varchar(255) DEFAULT NULL,
   `Balance` int(11) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `JoinDate` date NOT NULL,
+  `JoinDate` date NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `IsActive` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
