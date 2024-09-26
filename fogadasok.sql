@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Sze 26. 10:16
+-- Létrehozás ideje: 2024. Sze 26. 14:19
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -42,26 +42,26 @@ CREATE TABLE `bets` (
 --
 
 INSERT INTO `bets` (`BetsID`, `BetDate`, `Odds`, `Amount`, `BettorsID`, `EventID`, `Status`) VALUES
-(1, '2023-09-10', 2, 100, 1, 1, 1),
-(2, '2023-09-12', 1.8, 200, 2, 2, 0),
-(3, '2023-09-14', 1.5, 150, 3, 3, 1),
-(4, '2023-09-16', 2.2, 300, 4, 4, 1),
-(5, '2023-09-18', 1.9, 250, 5, 5, 0),
-(6, '2023-09-19', 2.1, 50, 6, 6, 1),
-(7, '2023-09-21', 1.7, 100, 7, 7, 1),
-(8, '2023-09-22', 2.3, 400, 8, 8, 0),
-(9, '2023-09-23', 1.6, 150, 9, 9, 1),
-(10, '2023-09-24', 1.95, 300, 10, 10, 1),
-(11, '2023-09-25', 1.8, 200, 1, 1, 0),
-(12, '2023-09-26', 2, 100, 2, 2, 1),
-(13, '2023-09-27', 2.5, 350, 3, 3, 1),
-(14, '2023-09-28', 1.85, 80, 4, 4, 0),
-(15, '2023-09-29', 1.75, 150, 5, 5, 1),
-(16, '2023-09-30', 2.1, 120, 6, 6, 0),
-(17, '2023-10-01', 1.9, 500, 7, 7, 1),
-(18, '2023-10-02', 2.2, 250, 8, 8, 1),
-(19, '2023-10-03', 1.65, 350, 9, 9, 0),
-(20, '2023-10-04', 1.95, 400, 10, 10, 1);
+(1, '2024-02-20', 1.5, 100, 1, 1, 1),
+(2, '2024-02-21', 2, 150, 2, 2, 1),
+(3, '2024-03-01', 1.8, 200, 3, 3, 0),
+(4, '2024-03-05', 2.5, 50, 4, 4, 1),
+(5, '2024-04-01', 1.3, 300, 5, 5, 0),
+(6, '2024-04-05', 3, 80, 6, 6, 1),
+(7, '2024-05-01', 2.2, 120, 1, 7, 1),
+(8, '2024-05-10', 1.9, 220, 2, 8, 0),
+(9, '2024-06-15', 1.7, 90, 3, 9, 1),
+(10, '2024-06-18', 2.8, 60, 4, 10, 1),
+(11, '2024-07-10', 1.4, 250, 5, 1, 0),
+(12, '2024-07-12', 3.5, 75, 6, 2, 1),
+(13, '2024-08-20', 1.6, 110, 1, 3, 1),
+(14, '2024-08-22', 2.1, 130, 2, 4, 0),
+(15, '2024-09-10', 1.2, 180, 3, 5, 1),
+(16, '2024-09-15', 2.9, 70, 4, 6, 1),
+(17, '2024-10-10', 1.3, 500, 5, 7, 0),
+(18, '2024-10-15', 4, 40, 6, 8, 1),
+(19, '2024-11-01', 2.6, 200, 1, 9, 1),
+(20, '2024-11-10', 1.8, 150, 2, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `bettors` (
   `Password` varchar(255) DEFAULT NULL,
   `Balance` int(11) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `JoinDate` date NOT NULL DEFAULT current_timestamp(),
+  `JoinDate` date NOT NULL,
   `IsActive` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -84,20 +84,16 @@ CREATE TABLE `bettors` (
 --
 
 INSERT INTO `bettors` (`BettorsID`, `Username`, `Password`, `Balance`, `Email`, `JoinDate`, `IsActive`) VALUES
-(1, 'john_doe', 'hashed_password_1', 1200, 'john@example.com', '2023-01-10', 1),
-(2, 'jane_smith', 'hashed_password_2', 850, 'jane@example.com', '2023-01-15', 1),
-(3, 'alice_jones', 'hashed_password_3', 1750, 'alice@example.com', '2023-02-01', 1),
-(4, 'bob_brown', 'hashed_password_4', 600, 'bob@example.com', '2023-02-10', 1),
-(5, 'charlie_davis', 'hashed_password_5', 2500, 'charlie@example.com', '2023-03-05', 1),
-(6, 'david_wilson', 'hashed_password_6', 900, 'david@example.com', '2023-03-15', 1),
-(7, 'eve_miller', 'hashed_password_7', 300, 'eve@example.com', '2023-04-01', 1),
-(8, 'frank_thompson', 'hashed_password_8', 1100, 'frank@example.com', '2023-04-20', 1),
-(9, 'grace_martin', 'hashed_password_9', 500, 'grace@example.com', '2023-05-05', 1),
-(10, 'henry_clark', 'hashed_password_10', 2000, 'henry@example.com', '2023-05-10', 1),
-(11, 'user', 'user', 1200, 'user@default.com', '2024-09-26', 1),
-(12, 'admin', 'admin', 1200, 'admin@default.com', '2024-09-26', 1),
-(13, 'organizer', 'org', 1200, 'organizer@default.com', '2024-09-26', 1);
-
+(1, 'speedster01', 'hashed_password1', 1000, 'speedster01@example.com', '2024-01-15', 1),
+(2, 'racefan92', 'hashed_password2', 500, 'racefan92@example.com', '2024-02-10', 1),
+(3, 'fastlane88', 'hashed_password3', 1500, 'fastlane88@example.com', '2024-03-05', 1),
+(4, 'trackmaster', 'hashed_password4', 300, 'trackmaster@example.com', '2024-01-20', 1),
+(5, 'f1lover', 'hashed_password5', 250, 'f1lover@example.com', '2024-02-15', 1),
+(6, 'pitstopking', 'hashed_password6', 600, 'pitstopking@example.com', '2024-03-10', 1),
+(7, 'checkeredflag', 'hashed_password7', 800, 'checkeredflag@example.com', '2024-04-01', 1),
+(8, 'podiumfinisher', 'hashed_password8', 700, 'podiumfinisher@example.com', '2024-01-25', 1),
+(9, 'racinghero', 'hashed_password9', 900, 'racinghero@example.com', '2024-02-20', 1),
+(10, 'trackwizard', 'hashed_password10', 100, 'trackwizard@example.com', '2024-03-15', 1);
 
 -- --------------------------------------------------------
 
@@ -118,16 +114,16 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`EventID`, `EventName`, `EventDate`, `Category`, `Location`) VALUES
-(1, 'Champions League Final', '2023-09-15', 'Sports', 'Wembley Stadium'),
-(2, 'World Music Festival', '2023-09-20', 'Music', 'Central Park'),
-(3, 'Local Art Exhibition', '2023-09-25', 'Art', 'Art Gallery 1'),
-(4, 'Basketball Championship', '2023-10-01', 'Sports', 'Arena 1'),
-(5, 'Theater Play Opening Night', '2023-10-05', 'Theater', 'Main Theater'),
-(6, 'Tech Conference 2023', '2023-10-10', 'Conference', 'Convention Center'),
-(7, 'Charity Gala', '2023-10-15', 'Charity', 'City Hall'),
-(8, 'Film Festival', '2023-10-20', 'Film', 'Cinema 1'),
-(9, 'Comedy Night', '2023-10-25', 'Comedy', 'Comedy Club'),
-(10, 'Marathon Race', '2023-10-30', 'Sports', 'City Streets');
+(1, 'Bahrain Grand Prix', '2024-03-03', 'Race', 'Bahrain International Circuit, Bahrain'),
+(2, 'Saudi Arabian Grand Prix', '2024-03-10', 'Race', 'Jeddah Corniche Circuit, Saudi Arabia'),
+(3, 'Australian Grand Prix', '2024-03-24', 'Race', 'Albert Park Circuit, Australia'),
+(4, 'Azerbaijan Grand Prix', '2024-04-07', 'Race', 'Baku City Circuit, Azerbaijan'),
+(5, 'Miami Grand Prix', '2024-05-05', 'Race', 'Miami International Autodrome, USA'),
+(6, 'Monaco Grand Prix', '2024-05-26', 'Race', 'Circuit de Monaco, Monaco'),
+(7, 'Spanish Grand Prix', '2024-06-02', 'Race', 'Circuit de Barcelona-Catalunya, Spain'),
+(8, 'Canadian Grand Prix', '2024-06-16', 'Race', 'Circuit Gilles Villeneuve, Canada'),
+(9, 'Austrian Grand Prix', '2024-07-07', 'Race', 'Red Bull Ring, Austria'),
+(10, 'British Grand Prix', '2024-07-14', 'Race', 'Silverstone Circuit, United Kingdom');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -167,7 +163,7 @@ ALTER TABLE `bets`
 -- AUTO_INCREMENT a táblához `bettors`
 --
 ALTER TABLE `bettors`
-  MODIFY `BettorsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `BettorsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT a táblához `events`
