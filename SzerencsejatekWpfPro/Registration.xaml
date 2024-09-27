@@ -11,12 +11,12 @@
     <Grid>
         <StackPanel Margin="0 25">
             <Label Content="Felhasználónév" FontSize="16" FontWeight="DemiBold"/>
-            <TextBox Style="{DynamicResource Username}" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
+            <TextBox Style="{DynamicResource Username}" x:Name="txtUsername" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
             <Label Content="Jelszó" FontSize="16" FontWeight="DemiBold"/>
-            <PasswordBox Style="{DynamicResource Password}" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
+            <PasswordBox Style="{DynamicResource Password}" x:Name="passPassword" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
             <Label Content="Email cím" FontSize="16" FontWeight="DemiBold"/>
-            <TextBox Style="{DynamicResource Username}" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
-            <Button Style="{DynamicResource LoginButton}" x:Name="btnbej"  Width="130" Height="25" Margin="0,20,0,0" Content="Regisztráció" Cursor="Hand" Click="Button_Click">
+            <TextBox Style="{DynamicResource Username}" x:Name="txtEmail" Width="160" Margin="0,-5,0,0" FontSize="13" FontWeight="DemiBold"/>
+            <Button Style="{DynamicResource LoginButton}" x:Name="btnReg"  Width="130" Height="25" Margin="0,20,0,0" Content="Regisztráció" Cursor="Hand" Click="btnReg_Click">
                 <Button.Effect>
                     <DropShadowEffect Color="LightBlue" BlurRadius="5" ShadowDepth="0" Direction="0" Opacity="1"/>
                 </Button.Effect>
