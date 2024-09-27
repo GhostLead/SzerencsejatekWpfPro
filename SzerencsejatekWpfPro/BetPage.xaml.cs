@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,21 +21,41 @@ namespace SzerencsejatekWpfPro
     /// </summary>
     public partial class BetPage : Page
     {
+        public string connectionString = "datasource = 127.0.0.1;port=3306;username=root;password=;database=fogadasok";
+        private MySqlConnection? connection;
+        List<Events> events;
         public BetPage()
         {
             InitializeComponent();
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
-            AddCard("Forma1", "Első forma1 futam");
-            AddCard("Foci", "Sokadik foci esemény");
+            loadEvents();
+            addEventCards();
+        }
+        private void loadEvents()
+        {
+            events = new List<Events>();
+
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                string lekerdezesSzoveg = "SELECT * FROM events ORDER BY EventID";
+
+                MySqlCommand lekerdezes = new MySqlCommand(lekerdezesSzoveg, connection);
+                lekerdezes.CommandTimeout = 60;
+                MySqlDataReader reader = lekerdezes.ExecuteReader();
+                while (reader.Read())
+                {
+                    events.Add(new Events(reader));
+                }
+                reader.Close();
+                connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AddCard(string titleText, string descriptionText)
@@ -76,6 +97,13 @@ namespace SzerencsejatekWpfPro
 
             // Finally, add the card panel to the StackPanel
             content.Children.Add(cardPanel);
+        }
+        private void addEventCards()
+        {
+            foreach (var item in events)
+            {
+                AddCard(item.category,item.eventName);
+            }
         }
     }
 }
